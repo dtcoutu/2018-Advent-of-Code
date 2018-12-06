@@ -16,6 +16,6 @@ class Day01Spec extends FlatSpec with Matchers {
 	}
 
 	"Determine frequency" should "sum numbers to get the frequency change" in {
-		assert(Day01.determineFrequency(List(1,-2,3,1)) == 3)
+		assert(Day01.determineResultingFrequency(List(1,-2,3,1)) == 3)
 	}
 }

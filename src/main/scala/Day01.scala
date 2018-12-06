@@ -35,12 +35,12 @@ object Day01 {
 	}
 
 	def processFrequencyChanges: Long = {
-		val inputData = parseInput(InputReader.readInput("Day01Input.txt"))
+		val inputData = InputReader.readInput("Day01Input.txt")
 		determineResultingFrequency(inputData.map(convertToNumber))
 	}
 
 	def processRepeatFrequency: Long = {
-		val inputData = parseInput(InputReader.readInput("Day01Input.txt"))
+		val inputData = InputReader.readInput("Day01Input.txt")
 		findRepeatFrequency(inputData.map(convertToNumber))
 	}
 
