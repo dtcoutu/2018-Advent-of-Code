@@ -13,7 +13,12 @@ object Day02 {
 		}
 
 		def sameLetters(other: Box): String = {
-			id.toList.intersect(other.id.toList).mkString
+			def go(id1: List[Char], id2: List[Char], matchedLetters: String): String = (id1, id2) match {
+				case (h1::t1, h2::t2) => go(t1, t2, matchedLetters + (if (h1 == h2) h1 else ""))
+				case _ => matchedLetters
+			}
+
+			go(id.toList, other.id.toList, "")
 		}
 
 		def offByOne(other: Box): Boolean = {

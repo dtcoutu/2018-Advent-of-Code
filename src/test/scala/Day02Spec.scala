@@ -61,6 +61,7 @@ ababab"""
 	"Generate similar ids" should "return box ids that are only off by one" in {
 		var input = """abcde
 fghij
+jfghi
 klmno
 pqrst
 fguij
