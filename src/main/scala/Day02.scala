@@ -29,7 +29,7 @@ object Day02 {
 	}
 
 	class SimilarBox(val box1: Box, val box2: Box, val matches: String) {
-		override def toString: String = s"box1: ${box1.id}, box2: ${box2.id}, matches: ${matches}"
+		override def toString: String = s"box1: ${box1.id}, box2: ${box2.id}, matches: $matches"
 		override def equals(any: Any): Boolean = any match {
 			case x: SimilarBox => box1.id == x.box1.id &&
 					box2.id == x.box2.id &&

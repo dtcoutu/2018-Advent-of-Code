@@ -10,21 +10,21 @@ abcdee
 ababab"""
 
 	"Box has two letters" should "return true if box id has exactly two of any letter" in {
-		assert(new Day02.Box("abcdef").hasExactlyTwoMatchingLetters == false)
-		assert(new Day02.Box("abcccd").hasExactlyTwoMatchingLetters == false)
+		assert(!new Day02.Box("abcdef").hasExactlyTwoMatchingLetters)
+		assert(!new Day02.Box("abcccd").hasExactlyTwoMatchingLetters)
 
-		assert(new Day02.Box("bababc").hasExactlyTwoMatchingLetters == true)
-		assert(new Day02.Box("abbcde").hasExactlyTwoMatchingLetters == true)
-		assert(new Day02.Box("aabcdd").hasExactlyTwoMatchingLetters == true)
+		assert(new Day02.Box("bababc").hasExactlyTwoMatchingLetters)
+		assert(new Day02.Box("abbcde").hasExactlyTwoMatchingLetters)
+		assert(new Day02.Box("aabcdd").hasExactlyTwoMatchingLetters)
 	}
 
 	"Box has three letters" should "return true if box id has exactly three of any letter" in {
-		assert(new Day02.Box("abcdef").hasExactlyThreeMatchingLetters == false)
-		assert(new Day02.Box("abbcde").hasExactlyThreeMatchingLetters == false)
+		assert(!new Day02.Box("abcdef").hasExactlyThreeMatchingLetters)
+		assert(!new Day02.Box("abbcde").hasExactlyThreeMatchingLetters)
 
-		assert(new Day02.Box("abcccd").hasExactlyThreeMatchingLetters == true)
-		assert(new Day02.Box("bababc").hasExactlyThreeMatchingLetters == true)
-		assert(new Day02.Box("ababab").hasExactlyThreeMatchingLetters == true)
+		assert(new Day02.Box("abcccd").hasExactlyThreeMatchingLetters)
+		assert(new Day02.Box("bababc").hasExactlyThreeMatchingLetters)
+		assert(new Day02.Box("ababab").hasExactlyThreeMatchingLetters)
 	}
 
 	"Count two letters" should "return the number of ids with two matching letters" in {
@@ -53,9 +53,9 @@ ababab"""
 	}
 
 	"Box off by one" should "return true if the ids have only one letter different" in {
-		assert(new Day02.Box("fghij").offByOne(new Day02.Box("fguij")) == true)
+		assert(new Day02.Box("fghij").offByOne(new Day02.Box("fguij")))
 
-		assert(new Day02.Box("fghij").offByOne(new Day02.Box("fguiz")) == false)
+		assert(!new Day02.Box("fghij").offByOne(new Day02.Box("fguiz")))
 	}
 
 	"Generate similar ids" should "return box ids that are only off by one" in {
