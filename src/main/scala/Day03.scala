@@ -65,8 +65,21 @@ object Day03 {
                 t.toInt, (t.toInt + h.toInt)))
   }
 
+  def findNonOverlappedClaim(claims: List[Claim]): Claim = {
+    def go(remainingClaims: List[Claim]): Claim = remainingClaims match {
+      case claim :: tail => {
+        val otherClaims = claims.filter(_.id != claim.id)
+        if (otherClaims.exists(_.overlaps(claim))) go(tail)
+        else claim
+      }
+    }
+
+    go(claims)
+  }
+
   def main(args: Array[String]): Unit = {
     val claims = generateClaims(InputReader.readInput("Day03Input.txt"))
     println("Overlapping Claims: " + duplicateClaimCount(mergeClaims(claims)))
+    println("Non-Overlapping Claim: " + findNonOverlappedClaim(claims))
   }
 }
